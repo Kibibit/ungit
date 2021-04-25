@@ -1,7 +1,7 @@
 {
   "name": "@kibibit/unbit",
-  "author": "thatkookooguy <neilkalman@gmail.com>",
   "description": "Fork of Ungit with kibibit theme",
+  "author": "thatkookooguy <neilkalman@gmail.com>",
   "version": "0.0.0-development",
   "ungitPluginApiVersion": "0.2.0",
   "scripts": {

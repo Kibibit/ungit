@@ -1,3 +1,12 @@
+achievibit changelog
+
+# [1.6.0](https://github.com/kibibit/ungit/compare/v1.5.16...v1.6.0) (2021-04-25)
+
+
+### Features
+
+* **package:** first release ([6e8b22e](https://github.com/kibibit/ungit/commit/6e8b22e3fcdd8b2e1ba67959ddb7a5eeaee666ac))
+
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](https://semver.org/).

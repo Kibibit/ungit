@@ -1,0 +1,43 @@
+name: Release
+on:
+  # workflow_run:
+  #   workflows:
+  #     - API Tests
+  #     - Client Unit Tests
+  #     - E2E Tests
+  #     - Server Unit Tests
+  #   types: [completed]
+  push:
+    branches:
+      - master
+      - beta
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.lock') }}
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build --if-present
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm run semantic-release

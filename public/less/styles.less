@@ -9,18 +9,18 @@
 
 // Font face declarations
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Comfortaa';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url('../fonts/OpenSans.woff') format('woff');
+  src: url('../fonts/Comfortaa-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Source Code Pro';
+  // font-family: 'Hack';
+  font-weight: 400;
   font-style: normal;
-  font-weight: 500;
-  src: local('Source Code Pro Medium'), local('SourceCodePro-Medium'),
-    url('../fonts/SourceCodePro-Medium.woff') format('woff');
+  src: url('../fonts/hack-regular-subset.woff') format('woff');
 }
 
 // Custom Scrollbar for Webkit
@@ -42,6 +42,20 @@
 
 ::-webkit-scrollbar-corner {
   background-color: black;
+}
+
+body {
+  font-size: 11px;
+  background: url(https://thatkookooguy.github.io/https-assets/bg/abstract/bg.png);
+  background-attachment: fixed;
+}
+
+.navbar {
+  background: #212121;
+}
+
+.form-control {
+  margin-bottom: 0.5em;
 }
 
 // Matching jQuery-UI autocomplete style to bootstrap dropdown
